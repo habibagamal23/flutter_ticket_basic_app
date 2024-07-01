@@ -3,26 +3,23 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import '../screens/home_screen.dart';
 
 class BottomNav extends StatefulWidget {
-  const BottomNav({super.key});
+  const BottomNav({Key? key}) : super(key: key);
 
   @override
   State<BottomNav> createState() => _BottomNavState();
 }
 
 class _BottomNavState extends State<BottomNav> {
-
-
-  final appScreens = [
-    const HomeScreen(),
-    Text("Search"),
-    Text("Ticket")
+  final List<Widget> appScreens = const [
+    HomeScreen(),
+    Center(child: Text("Search")),
+    Center(child: Text("Ticket"))
   ];
-  int selectedIndex =0 ;
-
-  void _onTapNav(int index){
- setState(() {
-   selectedIndex=index;
- });
+  int selectedIndex = 0;
+  void _onTapNav(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
   }
 
   @override
@@ -31,33 +28,31 @@ class _BottomNavState extends State<BottomNav> {
       body: appScreens[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         showSelectedLabels: false,
-      showUnselectedLabels: false,
-        currentIndex:selectedIndex,
+        showUnselectedLabels: false,
+        currentIndex: selectedIndex,
         onTap: _onTapNav,
-        items: const [
-          BottomNavigationBarItem(
-              icon: Icon(
-                FluentSystemIcons.ic_fluent_home_regular,
-              ),
-              activeIcon: Icon(FluentSystemIcons.ic_fluent_home_filled),
-
-              label: "Home"),
-          BottomNavigationBarItem(
-              icon: Icon(
-                FluentSystemIcons.ic_fluent_search_regular,
-              ),
-              activeIcon: Icon(FluentSystemIcons.ic_fluent_search_filled),
-
-              label: "search"),
-          BottomNavigationBarItem(
-              icon: Icon(
-                FluentSystemIcons.ic_fluent_ticket_regular,
-              ),
-              activeIcon: Icon(FluentSystemIcons.ic_fluent_ticket_filled),
-
-              label: "Ticket"),
-        ],
+        items: _buildBottomNavBarItems(),
       ),
     );
+  }
+
+  List<BottomNavigationBarItem> _buildBottomNavBarItems() {
+    return const [
+      BottomNavigationBarItem(
+        icon: Icon(FluentSystemIcons.ic_fluent_home_regular),
+        activeIcon: Icon(FluentSystemIcons.ic_fluent_home_filled),
+        label: "Home",
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(FluentSystemIcons.ic_fluent_search_regular),
+        activeIcon: Icon(FluentSystemIcons.ic_fluent_search_filled),
+        label: "Search",
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(FluentSystemIcons.ic_fluent_ticket_regular),
+        activeIcon: Icon(FluentSystemIcons.ic_fluent_ticket_filled),
+        label: "Ticket",
+      ),
+    ];
   }
 }
