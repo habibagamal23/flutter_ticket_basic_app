@@ -16,7 +16,7 @@ class AppStyle {
   static Color planeSecondColor = const Color(0xFFBACCF7);
   static Color profileLocationColor = const Color(0xFFFEF4F3);
   static Color profileTextColor = const Color(0xFF526799);
-
+  static Color SearchIcon  = const Color(0xFFBFC205);
   static TextStyle textStyle =
       TextStyle(fontSize: 16, color: textColor, fontWeight: FontWeight.w500);
   static TextStyle headline1 =
