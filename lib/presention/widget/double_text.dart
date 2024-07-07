@@ -15,7 +15,12 @@ class DoubleText extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(firstText, style: AppStyle.headLineStyle2, ),
-        Text(secText, style :AppStyle.textStyle.copyWith(color: AppStyle.primaryColor))
+        InkWell(
+            onTap: (){
+              
+            },
+            child:
+            Text(secText, style :AppStyle.textStyle.copyWith(color: AppStyle.primaryColor)))
       ],
     );
   }
