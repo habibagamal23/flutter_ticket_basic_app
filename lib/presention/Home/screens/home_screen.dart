@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/consatnt/app_style.dart';
+import 'package:ticket_app/presention/Home/screens/all_tickets.dart';
 
 import '../../../data/all_json.dart';
 import '../../widget/double_text.dart';
@@ -26,7 +27,13 @@ class HomeScreen extends StatelessWidget {
                const  SizedBox(height: 20),
               const  SearchSection(),
                 const  SizedBox(height: 20),
-                DoubleText(firstText: "UpComing", secText: "ViewAll",)
+                DoubleText(
+                  firstText: "UpComing", secText: "ViewAll",
+                  onpressed:  (){
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (BuildContext context)=>AllTickets()));
+                    }
+                )
                 ,
                 const  SizedBox(height: 20),
                 SingleChildScrollView(
