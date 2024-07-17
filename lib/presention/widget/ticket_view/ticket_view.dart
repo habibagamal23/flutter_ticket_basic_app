@@ -7,7 +7,8 @@ import 'container_with_line.dart';
 import 'ticket_orange.dart';
 
 class TicketView extends StatelessWidget {
-  const TicketView({super.key});
+  final Map<String , dynamic> ticket ;
+  const TicketView({super.key , required this.ticket});
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +29,11 @@ class TicketView extends StatelessWidget {
                 topRight: Radius.circular(21),
               ),
             ),
-            child: const TicketBlue(firstCountryLetter: 'NYC',
-              firstCountryName: 'New-York', distance: '80:30 M',
-              secCountryLetter: 'LDN', secCountryName: 'Londen',),
+            child:  TicketBlue(firstCountryLetter: ticket["from"]["code"],
+              firstCountryName: ticket["from"]["name"],
+              distance:  ticket['flying_time'],
+              secCountryLetter: ticket["to"]["code"],
+              secCountryName: ticket["to"]["name"],),
           ),
 
           // Container with Line Part
