@@ -6,7 +6,9 @@ import '../../../data/all_json.dart';
 import '../../widget/double_text.dart';
 import '../../widget/ticket_view/ticket_view.dart';
 import '../home_widget/greeting_section.dart';
+import '../home_widget/hotel_widget.dart';
 import '../home_widget/search_section.dart';
+import 'all_hotels.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -46,7 +48,28 @@ class HomeScreen extends StatelessWidget {
 
                 ).toList()
                     ),
-                )
+                ),
+
+                DoubleText(
+                    firstText: "Hotels", secText: "ViewAll",
+                    onpressed:  (){
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (BuildContext context)=>AllHotels()));
+                    }
+                ),
+                const  SizedBox(height: 20),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                      children:
+                      hotelList.take(2).map(
+                              (hotel)=>HotelWidget(hotels: hotel)
+
+
+                      ).toList()
+                  ),
+                ),
+
               ]
                 )
           )
