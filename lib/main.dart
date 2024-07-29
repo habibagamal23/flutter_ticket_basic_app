@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ticket_app/presention/Home/screens/all_hotels.dart';
+import 'package:ticket_app/presention/Home/screens/all_tickets.dart';
 import 'package:ticket_app/presention/widget/bottomnav.dart';
 
 
@@ -20,7 +22,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const  BottomNav(),
+      routes: {
+        "/": (context)=>BottomNav(),
+        "all_tickets" : (context)=>AllTickets(),
+       "all_hotels" :  (context)=>AllHotels(),
+      },
     );
   }
 }

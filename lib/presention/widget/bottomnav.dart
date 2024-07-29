@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 
 import '../Home/screens/home_screen.dart';
+import '../search/search_view.dart';
 
 class BottomNav extends StatefulWidget {
   const BottomNav({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class BottomNav extends StatefulWidget {
 class _BottomNavState extends State<BottomNav> {
   final List<Widget> appScreens = const [
     HomeScreen(),
-    Center(child: Text("Search")),
+  SearchView(),
     Center(child: Text("Ticket"))
   ];
   int selectedIndex = 0;

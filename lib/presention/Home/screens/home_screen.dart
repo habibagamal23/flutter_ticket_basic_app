@@ -32,9 +32,9 @@ class HomeScreen extends StatelessWidget {
                 DoubleText(
                   firstText: "UpComing", secText: "ViewAll",
                   onpressed:  (){
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (BuildContext context)=>AllTickets()));
-                    }
+                    Navigator.pushNamed(context,"all_tickets"
+                    );
+                  }
                 )
                 ,
                 const  SizedBox(height: 20),
@@ -53,8 +53,8 @@ class HomeScreen extends StatelessWidget {
                 DoubleText(
                     firstText: "Hotels", secText: "ViewAll",
                     onpressed:  (){
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (BuildContext context)=>AllHotels()));
+                      Navigator.pushNamed(context,"all_hotels"
+                      );
                     }
                 ),
                 const  SizedBox(height: 20),
